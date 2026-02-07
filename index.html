@@ -23,36 +23,56 @@
     }
 
     /* HERO */
-    .hero{
-      margin-bottom: 80px;
-    }
+     .hero{
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      align-items: center;
+      min-height: 80vh;
+      }
 
-    .profile-img{
-      width: 160px;
+      .profile-img{
+      width: 180px;
       border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    
-    .hero h1{
-      font-size: 56px;
-      margin-bottom: 10px;
-    }
+      border: 4px solid #ff7a00;
+      }
 
-    .hero p{
+      .hero-text h1{
+      font-size: 56px;
+      margin-bottom: 16px;
+      }
+
+      .hero-text p{
       font-size: 18px;
       color: #555;
-    }
+      }
 
-    /* SECTION */
-    section{
+      .accent{
+      color: #ff7a00;
+      font-weight: 600;
+      }
+
+      .card{
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
       margin-top: 80px;
-    }
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      }
+      .skills{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+      }
 
-    section h2{
-      font-size: 32px;
-      margin-bottom: 24px;
-    }
-
+      .skills span{
+      padding: 10px 16px;
+      border-radius: 20px;
+      background: #fff4ec;
+      color: #ff7a00;
+      font-weight: 500;
+      }
     /* ABOUT */
     .about{
       display: grid;
@@ -63,6 +83,18 @@
     .about p{
       line-height: 1.8;
       color: #444;
+    }
+
+    /* ANIMASI */
+    .reveal{
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+      .reveal.active{
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* PROJECTS */
@@ -86,7 +118,11 @@
     .project h3{
       margin-bottom: 8px;
     }
-
+    
+    .skills span:hover{
+     background: #ff7a00;
+    color: white;
+    }
     /* LINKS */
     .links a{
       margin-right: 20px;
@@ -107,26 +143,57 @@
   </style>
 </head>
 
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  window.addEventListener('scroll', () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  });
+</script>
+  
+  
 <body>
   <div class="container">
     
-  <div class="hero">
-    <h1>Tegar Haryo Wibowo</h1>
-    <p><b>Mathematics Student</b> — Data Analysis & Machine Learning</p>
-    <img src="assets/profile.jpg" class="profile-img" alt="Foto Tegar">
-  </div>
+  <section class="hero">
+  <img src="assets/profile.jpg" class="profile-img" alt="Foto Tegar">
+    <div class="hero-text">
+      <h1>Tegar Haryo Wibowo</h1>
+      <p>
+        Mathematics student with strong interest in
+        <span class="accent">Data Analysis</span>
+        <span class="accent">Data Visualization</span>
+        <span class="accent">Machine Learning</span>.
+      </p>
+    </div>
 
-    <section>
-      <h2>About Me</h2>
-      <div class="about">
-        <p>
-          I am an undergraduate Mathematics student with a strong interest in 
-          data analysis, statistics, and machine learning. I work with Python, R,
-          Excel, and data visualization to support data-driven decision making.
-        </p>
-      </div>
-    </section>
+  </section> 
+  <section class="card reveal">
+    <h2>About Me</h2>
+    <p>
+      I enjoy working with data, transforming raw numbers
+      into meaningful insights using statistics and machine learning.
+    </p>
+  </section>
+    
+    <section class="card reveal">
+      <h2>Core Skills</h2>
 
+        <div class="skills">
+        <span>Python</span>
+        <span>R</span>
+        <span>Data Analysis</span>
+        <span>Machine Learning</span>
+        <span>Statistics</span>
+        <span>Visualization</span>
+        </div>
+      </section>
+    
     <section>
       <h2>Projects</h2>
       <div class="projects">
