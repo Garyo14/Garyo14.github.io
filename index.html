@@ -52,18 +52,49 @@
     }
 
     /* HERO */
-     .hero{
+
+      .hero{
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 40px;
+      grid-template-columns: 1fr 320px;
+      gap: 60px;
       align-items: center;
-      margin-top: 50px;
+      min-height: 85vh;
+      }
+
+      .hero-left .intro{
+      color: #888;
+      margin-bottom: 8px;
+      }
+
+      .tagline{
+        font-size: 18px;
+        color: #555;
+        max-width: 520px;
+      }
+
+      .cta{
+        display: inline-block;
+        margin-top: 24px;
+        padding: 12px 22px;
+        background: linear-gradient(90deg,#ff7a00,#ffb347);
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .cta:hover{
+        transform: translateY(-2px);
+      }
+
+      .hero-right{
+        text-align: center;
       }
 
       .profile-img{
-      width: 180px;
-      border-radius: 50%;
-      border: 4px solid #ff7a00;
+        width: 260px;
+        border-radius: 20px;
+        border: 4px solid #ff7a00;
       }
 
       .hero-text h1{
@@ -185,18 +216,24 @@
   </nav>
     
   <section class="hero">
-  <img src="assets/profile.jpg" class="profile-img" alt="Foto Tegar">
-    <div class="hero-text">
-      <h1>Tegar Haryo Wibowo</h1>
-      <p>
-        Mathematics student with strong interest in
-        <span class="accent">Data Analysis, </span>
-        <span class="accent">Data Visualization, and</span>
-        <span class="accent">Machine Learning</span>.
-      </p>
-    </div>
+  <div class="hero-left">
+    <p class="intro">I am</p>
+    <h1>Tegar Haryo Wibowo</h1>
 
-  </section> 
+    <p class="tagline">
+      Data Analyst focused on turning raw data into clear insights
+      through <span class="accent">visualization</span> and
+      <span class="accent">statistical analysis</span>.
+    </p>
+
+    <a href="#projects" class="cta">View My Projects</a>
+  </div>
+
+  <div class="hero-right">
+    <img src="assets/profile.jpg" class="profile-img">
+  </div>
+  </section>
+    
   <section class="card reveal" id="about">
     <h2>About Me</h2>
     <p>
