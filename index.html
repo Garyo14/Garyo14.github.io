@@ -8,8 +8,20 @@
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
+  <!-- Backgorund -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
   <style>
   /* DATA BACKGROUND */
+
+    #particles-js{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
     body{
       background:
@@ -51,7 +63,7 @@
       border-radius: 6px;
       color: #ff7a00;
       text-decoration: none;
-      font-size: 14px
+      font-size: 14px;
       font-weight: 500;
       transition: 0.3s;
       }
@@ -257,8 +269,8 @@
 </head>
  
 <body>
-  <div class="container">
-      
+  <div id="particles-js"></div> <!-- WAJIB ADA DULU -->
+  
   <nav class="navbar">
       <div class="nav-container">
         <a href="#about" class="nav-btn">About me</a>
@@ -268,6 +280,8 @@
         <a href="assets/CV_ATS_DataAnalyst_Haryo - Tegar haryo Wibowo.pdf" target="_blank" class="nav-btn">MY CV</a>
       </div>
   </nav>
+  
+  <div class="container">
     
   <section class="hero">
   <div class="hero-left">
@@ -334,8 +348,25 @@
         <a href="https://www.linkedin.com/in/tegarharyo">LinkedIn</a>
       </div>
     </section>
-
-  </div>
+  
+    <script>
+      particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#ff9a00" },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#999",
+          opacity: 0.3,
+          width: 1
+        },
+        move: { enable: true, speed: 2 },
+        size: { value: 3 }
+      }
+      });
+    </script>
+    </div>
 
   
 <script>
